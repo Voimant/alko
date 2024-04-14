@@ -43,15 +43,5 @@ async def my_id(mess: Message):
             await mess.answer('Кирилл ты лучший 😘')
         elif x == 4:
             pass
-    elif mess.from_user.username == "Voimant":
-        x = random.randint(1, 4)
-        if x == 1:
-            await mess.answer('Кирилл не душни, форточку открывать придется :)')
-        elif x == 2:
-            pass
-        elif x == 3:
-            await mess.answer('Кирилл ты лучший 😘')
-        elif x == 4:
-            pass
 
 
