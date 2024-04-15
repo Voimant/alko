@@ -33,7 +33,7 @@ async def wiki(mess: Message, command: CommandObject):
 
 @router.message()
 async def my_id(mess: Message):
-        x = random.randint(1, 10)
+        x = random.randint(1, 100)
         if x == 1:
             await mess.answer('Хорошего настроения и приятного дня :)')
         elif x == 2:
