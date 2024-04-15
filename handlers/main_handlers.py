@@ -33,14 +33,13 @@ async def wiki(mess: Message, command: CommandObject):
 
 @router.message()
 async def my_id(mess: Message):
-    if mess.from_user.username == "Grebenkin":
-        x = random.randint(1, 4)
+        x = random.randint(1, 10)
         if x == 1:
-            await mess.answer('Кирилл не душни, форточку открывать придется :)')
+            await mess.answer('Хорошего настроения и приятного дня :)')
         elif x == 2:
             pass
         elif x == 3:
-            await mess.answer('Кирилл ты лучший 😘')
+            await mess.answer('Алко пати! вы лучшие, рада быть в вашей команде!')
         elif x == 4:
             pass
 
