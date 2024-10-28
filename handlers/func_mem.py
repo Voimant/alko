@@ -4,12 +4,11 @@ import random
 import time
 from asyncio import sleep
 
-import wikipedia
+
 from aiogram.types import FSInputFile
 from dotenv import load_dotenv
 from aiogram import Bot
 
-wikipedia.set_lang('ru')
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 bot = Bot(token=TOKEN)

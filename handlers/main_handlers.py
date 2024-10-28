@@ -3,13 +3,13 @@ import random
 from aiogram import Router, F
 from aiogram.filters import Command, CommandObject
 from aiogram.types import Message, CallbackQuery
-import wikipedia
+
 from dotenv import load_dotenv
 from aiogram import Bot
 import os
 
+from wiki import neiro
 
-wikipedia.set_lang('ru')
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 bot = Bot(token=TOKEN)
@@ -21,7 +21,7 @@ async def wiki(mess: Message, command: CommandObject):
     result = command.args
     result_list = result.split(' ')
     try:
-        out = wikipedia.summary(f"{result_list[0]}", sentences=4)
+        out = neiro(result_list)
         print(result)
         await mess.answer(out)
     except Exception as e:
