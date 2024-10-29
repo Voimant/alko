@@ -1,13 +1,25 @@
 import requests
+import json
 import argparse
 
 URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"
 
+def update_token():
+    url = 'https://iam.api.cloud.yandex.net/iam/v1/tokens'
+    data ='{"yandexPassportOauthToken":"y0_AgAAAAB2FRVuAATuwQAAAAEWRJwRAACLbspsHf1FXYhkkQjdW1nsEbYu6g"}'
+
+    response = requests.post(url, data=data)
+    file = (response.json())
+    with open('aim.json', 'w') as f:
+        json.dump(file, f)
+
+
 
 def neiro(question):
+    with open('aim.json') as f:
+        data = json.load(f)
+        token = data['iamToken']
     # Собираем запрос
-    token = 't1.9euelZqWmc6TzMuLzcyPlciZkciSlu3rnpWak52Jmp3InJ2NmMqey5GNjYzl8_ckcgFH-e9_WC4A_t3z92Qgf0b5739YLgD-zef1656Vmoybk8_HzpzLzJyayZSej4uX7_zF656Vmoybk8_HzpzLzJyayZSej4uX.HGPzD3_oIMZPvo8xQ7WWnheAiMfN9PUzr1WHjXuJg_3u5dHFPSu6pQmxMDTaL_vTq7IRZy95dgqEcQcmfO_tBw'
-
     data = {}
     # Указываем тип модели
     data["modelUri"] = "gpt://b1g91ecm1m52tvmskjp0/yandexgpt/rc"

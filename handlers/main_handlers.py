@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from aiogram import Bot
 import os
 
-from wiki import neiro
+from wiki import neiro, update_token
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
@@ -20,6 +20,7 @@ router = Router()
 async def wiki(mess: Message, command: CommandObject):
     result = command.args
     result_list = result.split(' ')
+    update_token()
     try:
         out = neiro(result_list)
         print(result)
