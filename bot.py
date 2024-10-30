@@ -17,7 +17,7 @@ async def main():
     dp = Dispatcher()
     logging.basicConfig(level=logging.INFO)
     dp.include_routers(handlers.main_handlers.router,)
-    aiocron.crontab('08 09 * * *', func=get_mem_day, start=True)
+    aiocron.crontab('05 30 * * *', func=get_mem_day, start=True)
     await dp.start_polling(bot)
 
 
